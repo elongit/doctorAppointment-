@@ -6,6 +6,7 @@ import Contact from "./pages/contact"
 import Footer from "./components/footer"
 import DoctorList from "./pages/doctorsList"
 import { BrowserRouter , Route , Routes } from "react-router-dom"
+import NotFound from "./pages/404"
 function App() {
   return (
   
@@ -18,8 +19,9 @@ function App() {
           <Route path="/Contact" element={<Contact/>}></Route>
           <Route path="/signUp" element={<SignUp/>}></Route>
           <Route path="/doctorsList" element={<DoctorList/>}></Route>
+          <Route path="*" element={<NotFound/>}></Route>
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
      </BrowserRouter>
      </>
   
