@@ -2,8 +2,8 @@
 
 const Contact = () => {
   return (
-    <fieldset className="lg:w-2/4 m-auto mt-10 p-5 md:p-10 md:shadow-md bg-white rounded">
-      <legend className="text-2xl font-bold text-primary-color drop-shadow">Tell us your problem </legend>
+    <fieldset className="lg:w-2/4 m-auto mt-10 p-4  md:p-10 md:shadow-md bg-white rounded">
+      <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Tell us your problem </legend>
       <form  className=" flex flex-col  gap-4">
         <label htmlFor="username" className="text-[17px] font-semibold">Full name*</label>
         <input
