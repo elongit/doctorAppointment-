@@ -5,7 +5,7 @@ const Login = () => {
     <fieldset className="md:w-2/3 lg:w-2/4 m-auto mt-20 p-4  md:p-5 md:shadow-lg bg-white">
       <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Login to your account</legend>
       <form  className=" flex flex-col  gap-4">
-        <label htmlFor="username" className="text-[17px] font-semibold">Username*</label>
+        <label htmlFor="username" className="md:text-[17px] font-semibold">Username*</label>
         <input
           type="text"
           name="username"
@@ -15,7 +15,7 @@ const Login = () => {
           outline-none "
         />
 
-        <label htmlFor="pass" className="text-[17px] font-semibold">Password*</label>
+        <label htmlFor="pass" className="md:text-[17px] font-semibold">Password*</label>
         <input
           type="password"
           name="pass"
@@ -24,6 +24,11 @@ const Login = () => {
             className="p-2 border-2 border-white hover:border-primary-color
              transition-all bg-slate-100 h-12 outline-none"
         />
+         <div className="cursor-pointer">
+            <small>Forget 
+                <NavLink to='/forgetPass'> password? </NavLink> 
+            </small>
+        </div>
 
         <button type="submit" className="bg-primary-color hover:bg-secondary-color text-white font-bold text-xl py-2 rounded-md">Login</button>
         <div className="cursor-pointer">
