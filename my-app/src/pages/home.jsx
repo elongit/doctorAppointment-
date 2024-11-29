@@ -1,7 +1,7 @@
 import HeroSection from "../components/heroSection";
 import Card from "../components/card";
 import ServiceCards from "../components/serviceCards";
-import data from "./cardData";
+import data from "./data/cardData";
 const Home = () => {
   const doctors = [
     {
