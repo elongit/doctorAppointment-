@@ -16,6 +16,7 @@ function App() {
      <>
      <BrowserRouter>
      <Header/>
+        <main className="pb-20">
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
@@ -27,7 +28,8 @@ function App() {
           <Route path="/emailCode" element={<EmailCode/>}></Route>
           <Route path="resetPass" element={<ResetPassword/>}></Route>
         </Routes>
-        {/* <Footer/> */}
+        </main>
+        <Footer/>
      </BrowserRouter>
      </>
   
