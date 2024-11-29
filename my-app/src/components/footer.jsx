@@ -2,8 +2,8 @@
 const Footer = ()=>{
 
     return(
-        <footer className="p-5 bg-blue-200  mt-10">
-
+        <footer className="p-5 bg-blue-50   absolute bottom-0 w-full">
+                {/* to do */}
         </footer>
     )
 }
