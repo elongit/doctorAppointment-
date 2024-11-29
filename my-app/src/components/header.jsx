@@ -1,18 +1,28 @@
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
+  console.log(isOpen);
+
   return (
-    <header className="flex justify-between p-5 cursor-pointer bg-white ">
-      <h1 className="font-bold text-3xl tracking-wider text-secondary-color">
+    <header className="flex justify-between p-5 cursor-pointer bg-white relative ">
+      <h1 className="font-bold text-2xl md:text-3xl tracking-wider text-secondary-color">
         <NavLink to="/">
-          {" "}
+        
           Doct
           <span className="text-white bg-primary-color px-2 rounded-md">
             or
           </span>
         </NavLink>
       </h1>
-      <nav className="">
-        <ul className="flex gap-5 font-semibold text-[18px] text-black/75 items-center">
+      <nav className={`bg-blue-50 lg:bg-transparent absolute lg:static  w-full lg:w-fit ${isOpen ? 'left-0' : '-left-full'} top-full p-5 lg:p-0 z-50 transition-all `}>
+        <ul className="flex flex-col lg:flex-row gap-5 font-semiboldlg:text-[18px] font-semibold text-black/75 items-center">
           <li>
             <NavLink to="/">About</NavLink>
           </li>
@@ -29,6 +39,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <label htmlFor="" className="text-3xl font-bold lg:hidden" onClick={handleClick}>
+        <FontAwesomeIcon icon={faBars} />
+      </label>
     </header>
   );
 };
