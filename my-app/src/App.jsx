@@ -16,7 +16,7 @@ function App() {
      <>
      <BrowserRouter>
      <Header/>
-        <main className="pb-20">
+        <main className="pb-10 lg:pt-10 md:pb-20 ">
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
