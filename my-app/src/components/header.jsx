@@ -21,7 +21,7 @@ const Header = () => {
           </span>
         </NavLink>
       </h1>
-      <nav className={`bg-blue-50 lg:bg-transparent absolute lg:static  w-full lg:w-fit ${isOpen ? 'left-0' : '-left-full'} top-full p-5 lg:p-0 z-50 transition-all `}>
+      <nav className={`bg-blue-50 py-10  lg:py-0 lg:bg-transparent absolute lg:static  w-full lg:w-fit ${isOpen ? 'left-0' : '-left-full'} top-full p-5 lg:p-0 z-50 transition-all `}>
         <ul className="flex flex-col lg:flex-row gap-5 font-semiboldlg:text-[18px] font-semibold text-black/75 items-center">
           <li>
             <NavLink to="/">About</NavLink>

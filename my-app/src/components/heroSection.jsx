@@ -17,7 +17,7 @@ const HeroSection = ()=>{
             </p>
             <NavLink
               to="/doctorslist"
-              className="bg-primary-color text-white px-5 py-3 rounded hover:bg-blue-500 transition-all md:text-xl"
+              className="bg-primary-color text-white px-5 py-3 rounded hover:bg-secondary-color transition-all md:text-xl"
             >
               Explore now
             </NavLink>

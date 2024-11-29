@@ -39,7 +39,7 @@ const Home = () => {
       <ServiceCards data={data} />
 
       {/* search section */}
-      <section className="p-5  md:py-10 flex-col">
+      <section className="p-5  md:p-10 flex-col">
         <div className="text-center">
           <h1 className="text-2xl md:text-4xl font-bold">
             Book your next <br />
