@@ -5,7 +5,7 @@ const SignUp = () => {
     <fieldset className="md:w-2/3 lg:w-2/4 m-auto mt-20 p-4  md:p-5 md:shadow-lg bg-white">
       <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Create new account</legend>
       <form  className=" flex flex-col  gap-4">
-      <label htmlFor="fname" className="text-[17px] font-semibold ">Full name*</label>
+      <label htmlFor="fname" className="text-sm md:text-[17px] font-semibold ">Full name*</label>
         <input
           type="text"
           name="fname"
@@ -15,7 +15,7 @@ const SignUp = () => {
           outline-none "
         />
 
-        <label htmlFor="username" className="text-[17px] font-semibold">Username*</label>
+        <label htmlFor="username" className="text-sm md:text-[17px] font-semibold">Username*</label>
         <input
           type="text"
           name="username"
@@ -25,7 +25,7 @@ const SignUp = () => {
           outline-none "
         />
 
-        <label label htmlFor="email" className="text-[17px] font-semibold">Email*</label>
+        <label label htmlFor="email" className="text-sm md:text-[17px] font-semibold">Email*</label>
         <input
           type="email"
           name="email"
@@ -35,7 +35,7 @@ const SignUp = () => {
           outline-none "
         />
 
-        <label htmlFor="pass" className="text-[17px] font-semibold">Password*</label>
+        <label htmlFor="pass" className="text-sm md:text-[17px] font-semibold">Password*</label>
         <input
           type="password"
           name="pass"
@@ -45,7 +45,7 @@ const SignUp = () => {
              transition-all bg-slate-100 h-12 outline-none"
         />
 
-        <label htmlFor="Cpass" className="text-[17px] font-semibold">Confirme Password*</label>
+        <label htmlFor="Cpass" className="text-sm md:text-[17px] font-semibold">Confirme Password*</label>
         <input
           type="password"
           name="Cpass"
