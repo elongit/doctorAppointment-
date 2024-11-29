@@ -127,7 +127,7 @@ const DoctorList = () => {
 
         {/* Sticky form section */}
         <aside className="p-5 w-full lg:w-1/3 cursor-pointer relative">
-          <fieldset className="sticky top-5 z-10 md:border-4 md:border-primary-color py-0 md:py-2 rounded">
+          <fieldset className="sticky top-5 z-10 md:border-2 md:border-primary-color py-0 md:py-2  shadow rounded">
             <form
               action=""
               className="flex md:flex-col overflow-x-scroll md:overflow-auto p-3 gap-5 w-80 md:w-full bg-white"
