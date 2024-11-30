@@ -6,9 +6,9 @@ const HeroSection = ()=>{
         <div className="flex flex-col-reverse lg:grid grid-cols-1 pb-2 lg:p-0 lg:grid-cols-2 md:place-content-start lg:place-items-center    mt-5 overflow-hidden gap-10 ">
          
           <div className="">
-            <h1 className="text-black text-2xl md:text-2xl font-bold lg:text-5xl md:leading-snug">
+            <h1 className="text-black text-2xl md:text-2xl font-bold lg:text-5xl">
               Find & Book{" "}
-              <span className="text-primary-color">Appointment </span>
+              <span className="text-primary-color ">Appointment </span>
               with your Fav <span className="text-primary-color">Doctor</span>
             </h1>
             <p className=" md:text-2xl text-gray-700 my-5 lg:my-8">
