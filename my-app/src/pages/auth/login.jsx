@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 const Login = () => {
   return (
     <fieldset className="md:w-2/3 lg:w-2/4 m-auto mt-10 p-4  md:p-5 md:shadow-lg bg-white">
-      <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Login to your account</legend>
+      <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">
+      Patient log in </legend>
       <form  className=" flex flex-col  gap-4">
         <label htmlFor="username" className="text-sm md:text-[17px] font-semibold">Username*</label>
         <input

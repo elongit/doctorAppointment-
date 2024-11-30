@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const SignUp = () => {
   return (
     <fieldset className="md:w-2/3 lg:w-2/4 m-auto p-4 mt-10   md:p-5 md:shadow-lg bg-white">
-      <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Create new account</legend>
+      <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Create a new account</legend>
       <form  className=" flex flex-col  gap-4">
       <label htmlFor="fname" className="text-sm md:text-[17px] font-semibold ">Full name*</label>
         <input
