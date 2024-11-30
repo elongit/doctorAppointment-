@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 export default function Card({ name, specialty, imageUrl }) {
     return (
         <article className="text-[17px] h-fit hover:shadow-lg transition-all p-2 cursor-pointer">
-        <figure className="rounded">
-         <img src={imageUrl} alt={name} className="w-full h-64 object-cover rounded-md"></img>
+        <figure className="rounded overflow-hidden">
+         <img src={imageUrl} alt={name} className="w-full h-64 object-cover rounded-md hover:scale-105 transition-all"></img>
         </figure>
         <div className="p-2">
             <NavLink className="text-xl text-secondary-color font-semibold">
