@@ -18,13 +18,13 @@ const Home = () => {
         "https://cdn.pixabay.com/photo/2024/03/25/18/35/ai-generated-8655320_640.png",
     },
     {
-      name: "Meriem El Amrani",
+      name: "Yassin El Amrani",
       specialty: "Pediatrics",
       imageUrl:
         "https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
     },
     {
-      name: "Mohamed El Fassi",
+      name: "Nadia El Fassi",
       specialty: "Orthopedics",
       imageUrl:
         "https://static.vecteezy.com/ti/photos-gratuite/t1/28287555-un-indien-jeune-femelle-medecin-isole-sur-vert-ai-genere-photo.jpg",
@@ -33,11 +33,13 @@ const Home = () => {
 
   return (
     <>
+      {/* hero section */}
       <HeroSection />
       {/* our services */}
-
+    
       <ServiceCards data={data} />
 
+    {/* about section */}
       <About />
 
       {/* search section */}
