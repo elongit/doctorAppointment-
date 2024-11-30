@@ -1,7 +1,8 @@
 import HeroSection from "../components/heroSection";
 import Card from "../components/card";
 import ServiceCards from "../components/serviceCards";
-import data from "./data/cardData";
+import data from "./data/servicesCardData";
+import About from "../components/about-us";
 const Home = () => {
   const doctors = [
     {
@@ -32,11 +33,12 @@ const Home = () => {
 
   return (
     <>
-      
-    <HeroSection/>
+      <HeroSection />
       {/* our services */}
 
       <ServiceCards data={data} />
+
+      <About />
 
       {/* search section */}
       <section className="p-5  md:p-10 flex-col">
@@ -49,7 +51,6 @@ const Home = () => {
             Find, book and add your favourite practitioners to your care team.
           </p>
         </div>
-
         <form className="m-auto flex flex-col gap-3 md:gap-0 md:flex-row w-full lg:w-2/5">
           <input
             type="search"
@@ -58,14 +59,14 @@ const Home = () => {
             className="border-r-2 p-3 outline-none rounded-s-md w-full bg-slate-100 border-2 border-white hover:border-secondary-color"
             placeholder="specialty"
           />
-            <input
+          <input
             type="search"
             name="location"
             id="location"
             className="border-r-2 p-3 outline-none rounded-s-md w-full bg-slate-100 border-2 border-white hover:border-secondary-color"
             placeholder="location"
           />
-         
+
           <button
             type="button"
             className="bg-primary-color text-white px-4 py-2 text-center text-xl font-bold rounded-e-md"
@@ -75,8 +76,8 @@ const Home = () => {
         </form>
       </section>
 
-    {/* popular doctors section */}
-      <h1 className="text-3xl font-semibold pl-5 mt-5">Popular Doctors</h1>
+      {/* popular doctors section */}
+      <h1 className="text-3xl font-semibold pl-5 mt-5 text-primary-color">Popular Doctors</h1>
       {/* Main doctor cards section */}
       <section className="p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-5 w-full ">
         {doctors.map((doctor, index) => (
@@ -88,8 +89,6 @@ const Home = () => {
           />
         ))}
       </section>
-
-      
     </>
   );
 };
