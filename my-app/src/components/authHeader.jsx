@@ -6,8 +6,9 @@ const AuthHeader = () => {
     <header className="flex justify-between p-2 md:p-5 cursor-pointer ">
       <h1 className="font-bold text-xl md:text-3xl tracking-wider text-secondary-color  p-2 rounded ">
         <NavLink to="/">
-          {" "}
-          Doct<span className=" bg-primary-color px-2 text-white rounded">or</span>
+        <span className="text-white bg-primary-color px-2 py-1.5 rounded-md"> 
+          Dr+ 
+          </span>
         </NavLink>
       </h1>
 
