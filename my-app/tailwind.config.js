@@ -8,7 +8,7 @@ export default {
         "secondary-color": "#2563eb",
       },
       fontFamily: {
-        Inter: ["Inter", "sans-serif"],
+        Inter: ["Open Sans", "sans-serif"],
       },
     },
   },
