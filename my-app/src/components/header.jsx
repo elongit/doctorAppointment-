@@ -5,7 +5,7 @@ import { useState , useEffect } from "react";
 
 const Header = () => {
   const location = useLocation();
-  console.log(location);
+  //console.log(location);
 
   useEffect(()=>{
     setIsOpen(false)
@@ -16,17 +16,17 @@ const Header = () => {
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
-  console.log(isOpen);
-
+  
   return (
     <header className="flex justify-between p-5 cursor-pointer bg-white relative ">
       <h1 className="font-bold text-2xl md:text-3xl tracking-wider text-secondary-color">
         <NavLink to="/">
         
-          Doct
-          <span className="text-white bg-primary-color px-2 rounded-md">
-            or
+         
+        <span className="text-white bg-primary-color px-2 py-1.5 rounded-md"> 
+          Dr+ 
           </span>
+       
         </NavLink>
       </h1>
       <nav className={`bg-blue-50 py-10  lg:py-0 lg:bg-transparent absolute lg:static  w-full lg:w-fit ${isOpen ? 'left-0' : '-left-full'} top-full  p-5 lg:p-0 z-50 transition-all `}>
