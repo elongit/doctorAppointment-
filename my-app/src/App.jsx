@@ -24,13 +24,15 @@ function App() {
 
 const AppContent = () => {
   const {pathname} = useLocation();
+
+  
   
   
   return (
     <>
      {pathname === '/login' || pathname === '/signUp'  ? <AuthHeader/> :  <Header/> }
      
-      <main className="pb-10 lg:pt-0 md:pb-20 ">
+      <main className="lg:pt-0 pb-20 ">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
