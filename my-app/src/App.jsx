@@ -12,7 +12,7 @@ import DoctorList from "./pages/doctorsList";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import NotFound from "./pages/404";
 function App() {
-  
+ 
   return (
     <>
       <BrowserRouter>
@@ -24,6 +24,45 @@ function App() {
 
 const AppContent = () => {
   const {pathname} = useLocation();
+  const routes = [
+    {
+      path: '/',
+      component : <Home/>
+    },
+    {
+      path: '/login',
+      component : <Login />
+    },
+    {
+      path: '/Contact',
+      component : <Contact />
+    },
+    {
+      path: '/signUp',
+      component : <SignUp />
+    },
+    {
+      path: '/doctorsList',
+      component : <DoctorList />
+    },
+    {
+      path: '/*',
+      component : <NotFound />
+    },
+    {
+      path: '/forgetPass',
+      component : <ForgetPassword />
+
+    },
+    {
+      path: ' /emailCode',
+      component : <EmailCode />
+    },
+    {
+      path: '/resetPass',
+      component : <ResetPassword />
+    },
+  ]
 
   
   
@@ -34,15 +73,9 @@ const AppContent = () => {
      
       <main className="lg:pt-0 pb-20 ">
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
-          <Route path="/signUp" element={<SignUp />}></Route>
-          <Route path="/doctorsList" element={<DoctorList />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-          <Route path="/forgetPass" element={<ForgetPassword />}></Route>
-          <Route path="/emailCode" element={<EmailCode />}></Route>
-          <Route path="resetPass" element={<ResetPassword />}></Route>
+          {routes.map((route)=>
+            <Route key={route.path} path={route.path} element={route.component}/>
+          )}
         </Routes>
       </main>
       <Footer />
