@@ -13,6 +13,7 @@ const AuthHeader = () => {
       </h1>
 
       <nav>
+        <ul>
         {location.pathname === "/login" ? (
           <li className="bg-primary-color text-white px-4 py-2 rounded">
             <NavLink to="/signUp">Sign up</NavLink>
@@ -22,6 +23,7 @@ const AuthHeader = () => {
             <NavLink to="/login">Login</NavLink>
           </li>
         )}
+        </ul>
       </nav>
     </header>
   );
