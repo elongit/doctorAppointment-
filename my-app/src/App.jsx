@@ -1,15 +1,15 @@
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/header";
 import AuthHeader from './components/authHeader'
 import Home from "./pages/home";
 import Login from "./pages/auth/Login/loginForm";
-import SignUp from "./pages/auth/signUp";
+import SignUp from "./pages/auth/signUp/signUpForm";
 import ForgetPassword from "./pages/auth/forgetPass";
 import EmailCode from "./pages/auth/emailCode";
 import ResetPassword from "./pages/auth/resetPass";
 import Contact from "./pages/contact/contact";
 import Footer from "./components/footer";
 import DoctorList from "./pages/doctorsList";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import NotFound from "./pages/404";
 function App() {
  
