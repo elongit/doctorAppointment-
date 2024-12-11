@@ -6,13 +6,14 @@ const AuthHeader = () => {
     <header className="flex justify-between p-2 md:p-5 cursor-pointer ">
       <h1 className="font-bold text-xl md:text-3xl tracking-wider text-secondary-color  p-2 rounded ">
         <NavLink to="/">
-        <span className="text-white bg-primary-color px-2 py-1.5 rounded-md"> 
+        <span className="text-white bg-primary-color px-2 py-1 rounded-md"> 
           Dr+ 
           </span>
         </NavLink>
       </h1>
 
       <nav>
+        <ul className="list-none">
         {location.pathname === "/login" ? (
           <li className="bg-primary-color text-white px-4 py-2 rounded">
             <NavLink to="/signUp">Sign up</NavLink>
@@ -22,6 +23,7 @@ const AuthHeader = () => {
             <NavLink to="/login">Login</NavLink>
           </li>
         )}
+        </ul>
       </nav>
     </header>
   );
