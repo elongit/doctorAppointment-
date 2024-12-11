@@ -23,7 +23,7 @@ const Header = () => {
         <NavLink to="/">
         
          
-        <span className="text-white bg-primary-color px-2 py-1.5 rounded-md"> 
+        <span className="text-white bg-primary-color px-2 py-1 rounded-md"> 
           Dr+ 
           </span>
        
