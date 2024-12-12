@@ -32,7 +32,8 @@ const Home = () => {
               Find availability of all doctor and book an appointment. with one
               click{" "}
             </p>
-               <Btn type='button' label="Explore now!" to="/doctorslist" />
+               <Btn type='button' label="Explore now!" path="/doctorslist" />
+            
           </div>
           <figure className="overflow-hidden cursor-zoom-in">
             <img
@@ -63,7 +64,7 @@ const Home = () => {
             teleconsultations for quick access to care.
           </p>
           
-          <Btn type="button" label="Book an appointment now!" to="" />
+          <Btn type="button" label="Book an appointment now!" path="/doctorsList" />
         </div>
         <figure className="w-72 lg:w-96 order-first lg:order-last bg-white">
           <img src={serviceImage} alt="Doctor service image" className="w-full" />
@@ -75,9 +76,9 @@ const Home = () => {
         <h1 className="text-xl md:text-3xl font-bold mb-12 text-black/60">
           What our Patients say about us
         </h1>
-        <Testemonials />
+        <Testemonials limitedNumber={3} />
         <div className="mt-3">
-        <Btn type="button" label={ <FontAwesomeIcon icon={faArrowRight} />} to="" />
+        <Btn type="button" label={ <FontAwesomeIcon icon={faArrowRight} />} path="/TestimonialPage  " />
         </div>
       </section>
     </>
