@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/header";
-import AuthHeader from './components/authHeader'
+
 import Home from "./pages/home";
 import Login from "./pages/auth/Login/loginForm";
 import SignUp from "./pages/auth/signUp/signUpForm";
@@ -11,6 +11,9 @@ import Contact from "./pages/contact/contact";
 import Footer from "./components/footer";
 import DoctorList from "./pages/doctorsList";
 import NotFound from "./pages/404";
+import UserHeader from "./pages/userProfile/userheader";
+
+
 function App() {
  
   return (
@@ -21,6 +24,8 @@ function App() {
     </>
   );
 }
+
+
 
 const AppContent = () => {
   const {pathname} = useLocation();
@@ -62,14 +67,28 @@ const AppContent = () => {
       path: '/resetPass',
       component : <ResetPassword />
     },
+    {
+      path: '/user',
+      component : <UserHeader />
+    }
   ]
+    let header ;
+    if(pathname === '/doctorsList' || pathname === '/contact'){
+      header =  <UserHeader/>
 
-  
+    }else{
+      header = <Header/>
+    }
+     
+    
+    
+    
+
   
   
   return (
     <>
-     {pathname === '/login' || pathname === '/signUp'  ? <AuthHeader/> :  <Header/> }
+     {header }
      
       <main className="lg:pt-0 pb-20 ">
         <Routes>

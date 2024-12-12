@@ -1,4 +1,4 @@
-import Card from "../components/card";
+import DoctorCard from "../components/DoctorCard";
 import Select from "../components/select";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faFilter } from '@fortawesome/free-solid-svg-icons';
@@ -116,7 +116,7 @@ const DoctorList = () => {
         {/* Main doctor cards section */}
         <section className="p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 md:gap-5 w-full lg:w-2/3 ">
           {doctors.map((doctor, index) => (
-            <Card
+            <DoctorCard
               key={index}
               name={doctor.name}
               specialty={doctor.specialty}

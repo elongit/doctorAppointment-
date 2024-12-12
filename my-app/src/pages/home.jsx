@@ -1,95 +1,84 @@
-import HeroSection from "../components/heroSection";
-import Card from "../components/card";
-import ServiceCards from "../components/serviceCards";
-import data from "./data/servicesCardData";
-import About from "../components/about-us";
-const Home = () => {
-  const doctors = [
-    {
-      name: "Fatima Zahra",
-      specialty: "Dermatology",
-      imageUrl:
-        "https://img.freepik.com/photos-gratuite/heureux-jeune-femme-medecin-portant-robe-medicale-stethoscope-autour-du-cou-debout-posture-fermee_409827-254.jpg",
-    },
-    {
-      name: "Ahmed Benali",
-      specialty: "Neurology",
-      imageUrl:
-        "https://cdn.pixabay.com/photo/2024/03/25/18/35/ai-generated-8655320_640.png",
-    },
-    {
-      name: "Yassin El Amrani",
-      specialty: "Pediatrics",
-      imageUrl:
-        "https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
-    },
-    {
-      name: "Nadia El Fassi",
-      specialty: "Orthopedics",
-      imageUrl:
-        "https://static.vecteezy.com/ti/photos-gratuite/t1/28287555-un-indien-jeune-femelle-medecin-isole-sur-vert-ai-genere-photo.jpg",
-    },
-  ];
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+// Components
+
+import ServiceCards from "../components/serviceCards";
+import Testemonials from "../components/testemonialsCards";
+import Btn from "../components/btn";
+
+// Data
+import data from "../data/servicesCardData";
+
+// Assets
+import serviceImage from "../../public/assets/ServiceImage-Photoroom.png";
+
+const Home = () => {
   return (
     <>
+   
       {/* hero section */}
-      <HeroSection />
-      {/* our services */}
-    
-      <ServiceCards data={data} />
-
-    {/* about section */}
-      <About />
-
-      {/* search section */}
-      <section className="p-5  md:p-10 flex-col">
-        <div className="text-center">
-          <h1 className="text-2xl md:text-4xl font-bold">
-            Book your next <br />
-            <span className="text-primary-color"> healthcare appointment</span>
-          </h1>
-          <p className="md:text-xl my-5 text-black/50 font-bold">
-            Find, book and add your favourite practitioners to your care team.
-          </p>
+      <section className="p-5">
+        <div className="flex flex-col-reverse lg:grid grid-cols-1 pb-2 lg:p-0 lg:grid-cols-2 md:place-content-start lg:place-items-center   overflow-hidden gap-10 ">
+         
+          <div className="">
+            <h1 className="text-black/75 text-xl m:text-2xl font-bold lg:text-5xl  ">
+             <span className="md:block mb-2 "> Find & Book{" "}
+            Appointment </span>
+              with your Fav Doctor
+            </h1>
+            <p className=" md:text-2xl text-gray-700 mt-3 mb-5 lg:my-8">
+              Find availability of all doctor and book an appointment. with one
+              click{" "}
+            </p>
+               <Btn type='button' label="Explore now!" to="/doctorslist" />
+          </div>
+          <figure className="overflow-hidden cursor-zoom-in">
+            <img
+              src="https://doctor-appointment-booking-web-nextjs.vercel.app/doctors.jpg"
+              alt=""
+              className="rounded-md hover:scale-105 transition-all"
+            />
+          </figure>
         </div>
-        <form className="m-auto flex flex-col gap-3 md:gap-0 md:flex-row w-full lg:w-2/5">
-          <input
-            type="search"
-            name="specialty"
-            id="specialty"
-            className="border-r-2 p-3 outline-none rounded-s-md w-full bg-slate-100 border-2 border-white hover:border-secondary-color"
-            placeholder="specialty"
-          />
-          <input
-            type="search"
-            name="location"
-            id="location"
-            className="border-r-2 p-3 outline-none rounded-s-md w-full bg-slate-100 border-2 border-white hover:border-secondary-color"
-            placeholder="location"
-          />
-
-          <button
-            type="button"
-            className="bg-primary-color text-white px-4 py-2 text-center text-xl font-bold rounded-e-md"
-          >
-            Search
-          </button>
-        </form>
+      </section>
+    
+      
+      {/* Our Services */}
+      <section className="p-5">
+        <ServiceCards data={data} />
+      </section>
+      
+      {/* Book Appointment Section */}
+      <section className="p-5 bg-blue-50 grid md:grid-cols-1 lg:grid-cols-2 place-items-center gap-10 lg:gap-5">
+        <div>
+          <h1 className="text-xl md:text-3xl font-bold text-black/60">
+            Find a practitioner available today, even on Saturday with Doc
+          </h1>
+          <p className="my-5 text-gray-700">
+            Need a consultation quickly? Book an appointment with a doctor,
+            dentist, or therapist available the same day. In just a few clicks,
+            find a healthcare professional near you or offering
+            teleconsultations for quick access to care.
+          </p>
+          
+          <Btn type="button" label="Book an appointment now!" to="" />
+        </div>
+        <figure className="w-72 lg:w-96 order-first lg:order-last bg-white">
+          <img src={serviceImage} alt="Doctor service image" className="w-full" />
+        </figure>
       </section>
 
-      {/* popular doctors section */}
-      <h1 className="text-3xl font-semibold pl-5 mt-5 text-primary-color">Popular Doctors</h1>
-      {/* Main doctor cards section */}
-      <section className="p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-5 w-full ">
-        {doctors.map((doctor, index) => (
-          <Card
-            key={index}
-            name={doctor.name}
-            specialty={doctor.specialty}
-            imageUrl={doctor.imageUrl}
-          />
-        ))}
+      {/* Testimonials Section */}
+      <section className="p-5 my-10">
+        <h1 className="text-xl md:text-3xl font-bold mb-12 text-black/60">
+          What our Patients say about us
+        </h1>
+        <Testemonials />
+        <div className="mt-3">
+        <Btn type="button" label={ <FontAwesomeIcon icon={faArrowRight} />} to="" />
+        </div>
       </section>
     </>
   );

@@ -1,8 +1,25 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
+import { useNavigate ,useLocation} from "react-router-dom";
+
 
 const useLoginFormLogic = () => {
+  const {state} = useLocation()
+  const [msg , setMsg] = useState()
+  const message = state?.message || null
+ 
+  useEffect(()=>{
+    if(message){
+      setMsg(message)
+    }
+    setTimeout(() => {
+      setMsg('')
+    }, 5000);
+  },[message])
+
+  
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    username: "",
+    username: "", 
     password: "",
   });
 
@@ -20,6 +37,9 @@ const useLoginFormLogic = () => {
     const errors = {};
     if (!formData.username.trim()) errors.username = validationMsg.required;
     if (!formData.password.trim()) errors.password = validationMsg.required;
+    if(formData.username === 'oussama' && formData.password === '1234'){
+        navigate('/doctorsList')
+    }
 
     if (Object.keys(errors).length > 0) {
       setFormErr(errors);
@@ -51,6 +71,7 @@ const useLoginFormLogic = () => {
     err,
     handleSubmit,
     handleChange,
+    msg
   };
 };
 

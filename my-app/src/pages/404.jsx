@@ -4,7 +4,7 @@ const NotFound = () => {
     return (
         <>
 
-            <div className="flex flex-col p-5 justify-center h-full items-center gap-5 translate-y-36">
+            <div className="flex flex-col p-5 justify-center h-full items-center gap-5 translate-y-36 md:translate-y-24">
                 <h1 className="text-6xl md:text-8xl font-bold text-black/85 ">4 <span className="text-primary-color">0</span> 4</h1>
                 <p className="text-xl text-gray-500 font-medium">Oops page not found</p>
                 <NavLink

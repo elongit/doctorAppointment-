@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-color": "#3b82f6",
-        "secondary-color": "#2563eb",
+        "primary-color": "#0ea5e9",
+      
+        "secondary-color": "#0284c7",
       },
       fontFamily: {
         Inter: ["Open Sans", "sans-serif"],
