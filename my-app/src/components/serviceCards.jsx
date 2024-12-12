@@ -16,7 +16,7 @@ const ServiceCards = ({ data }) => {
   return (
     <>
       <div className="my-10 ">
-        <h1 className="text-xl md:text-3xl mt-12 font-bold lg:text-3xl text-center mb-8 text-black/75 ">
+        <h1 className="text-xl md:text-3xl font-bold lg:text-3xl text-center mb-8 text-black/75 ">
           Our Included <span className="text-primary-color">Services</span>
         </h1>
       </div>
