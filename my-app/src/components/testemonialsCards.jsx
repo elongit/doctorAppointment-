@@ -1,6 +1,6 @@
 import TestimonialsData from "../data/testimonialsData"; // Make sure your import name is correct (Testemonials => Testimonials)
-function Testimonials() {
-  const limitedTestimonials = TestimonialsData.slice(0,3)
+function Testimonials({limitedNumber}) {
+  const limitedTestimonials = TestimonialsData.slice(0,limitedNumber)
   
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
