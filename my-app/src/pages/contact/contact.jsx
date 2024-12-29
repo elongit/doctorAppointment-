@@ -2,7 +2,8 @@
 
 const Contact = () => {
   return (
-    <fieldset className=" md:w-2/3 lg:w-2/4 m-auto p-4 mt-10  md:p-5 md:shadow-md bg-white rounded">
+    <section className="my-24">
+    <fieldset className=" md:w-2/3 lg:w-2/4 m-auto p-4   md:p-5 md:shadow-md bg-white rounded">
       <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">Tell us your problem </legend>
       <form  className=" flex flex-col  gap-4">
         <label htmlFor="username" className="text-[17px] font-semibold">Full name*</label>
@@ -47,11 +48,11 @@ const Contact = () => {
         ></textarea>
 
 
-
         <button type="submit" className="bg-primary-color hover:bg-secondary-color text-white font-bold text-xl rounded-md py-2">Send your message</button>
 
       </form>
     </fieldset>
+   </section>
   );
 }; 
 export default Contact

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Input = ({
   label,
   type = "text",
@@ -25,10 +26,10 @@ const Input = ({
         value={value}
         onChange={onChange}
         
-        className={`rounded p-2 bg-slate-100 border-white hover:border-blue-500 focus:outline-none focus:ring-4 ${
+        className={`rounded p-3 bg-slate-100 border-white hover:border-primary-color focus:outline-none focus:ring-4 ${
           error
             ? "border-red-500 focus:ring-red-500"
-            : "border-blue-500 focus:ring-blue-500"
+            : "border-primary-color focus:ring-priborder-primary-color"
         }`}
       />
 
@@ -38,5 +39,16 @@ const Input = ({
     </div>
   );
 };
+
+Input.propTypes = {
+  label : PropTypes.string.isRequired,
+  type : PropTypes.string.isRequired,
+  name : PropTypes.string.isRequired,
+  id : PropTypes.string.isRequired,
+  value : PropTypes.string,
+  placeholder : PropTypes.string,
+  onChange : PropTypes.func,
+  error : PropTypes.string
+}
 
 export default Input;

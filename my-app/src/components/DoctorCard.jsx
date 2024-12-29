@@ -1,18 +1,10 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-export default function DoctorCard({ name, specialty, imageUrl }) {
-  const navigate = useNavigate();
-  const [islogged, setIslogged] = useState(false);
 
-  const visitProfile = () => {
-    if (islogged) {
-      navigate("/");
-    } else {
-      navigate("/login",{state:{message:"Please login to book an apointment"},replace:true});
-    }
-  };
+
+
+export default function DoctorCard({ name, specialty, imageUrl }) {
+
   return (
     <article className="text-[17px] h-fit hover:shadow-lg transition-all p-2 cursor-pointer">
       <figure className="rounded overflow-hidden cursor-zoom-in">
@@ -26,15 +18,18 @@ export default function DoctorCard({ name, specialty, imageUrl }) {
         <NavLink className="text-xl text-secondary-color font-semibold">
           Dr. {name}
         </NavLink>
-        <p className="text-sm font-bold">{specialty}</p>
+        <p className="text-sm font-semibold text-gray-600">{specialty}</p>
       </div>
       <div className="flex flex-col gap-1 text-center">
-        <button
-          onClick={visitProfile}
+        <button 
+         
           className="bg-primary-color hover:bg-secondary-color text-white font-bold  py-2 rounded-md"
         >
-          {" "}
-          Book an appointment
+        
+        <NavLink to='/booking'>
+        Book an appointment
+        </NavLink>
+        
         </button>
       </div>
     </article>

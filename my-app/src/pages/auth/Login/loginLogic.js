@@ -4,16 +4,18 @@ import { useNavigate ,useLocation} from "react-router-dom";
 
 const useLoginFormLogic = () => {
   const {state} = useLocation()
-  const [msg , setMsg] = useState()
+  const [msg, setMsg] = useState(null);
   const message = state?.message || null
+ console.log(message);
  
   useEffect(()=>{
     if(message){
       setMsg(message)
     }
-    setTimeout(() => {
+   const timeoutId =  setTimeout(() => {
       setMsg('')
     }, 5000);
+    return () => clearTimeout(timeoutId);
   },[message])
 
   
@@ -21,11 +23,13 @@ const useLoginFormLogic = () => {
   const [formData, setFormData] = useState({
     username: "", 
     password: "",
+    
   });
 
   const [err, setFormErr] = useState({
     username: "",
     password: "",
+    invalidCredentials : "",
   });
 
   const validationMsg = {
@@ -38,7 +42,9 @@ const useLoginFormLogic = () => {
     if (!formData.username.trim()) errors.username = validationMsg.required;
     if (!formData.password.trim()) errors.password = validationMsg.required;
     if(formData.username === 'oussama' && formData.password === '1234'){
-        navigate('/doctorsList')
+        navigate('/')
+    }else{
+      errors.invalidCredentials = validationMsg.loginValidationErr
     }
 
     if (Object.keys(errors).length > 0) {

@@ -1,11 +1,13 @@
-import TestimonialsData from "../data/testimonialsData"; // Make sure your import name is correct (Testemonials => Testimonials)
+import TestimonialsData from "../data/testimonialsData";
+import PropTypes from "prop-types";
 function Testimonials({limitedNumber}) {
+
   const limitedTestimonials = TestimonialsData.slice(0,limitedNumber)
   
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
-      {limitedTestimonials .map((t) => (
-        <article key={t.id} className="p-6 w-full  shadow-lg rounded-lg hover:scale-105 duration-200">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 cursor-zoom-in">
+      {limitedTestimonials .map((t , i) => (
+        <article key={i} className="p-6 w-full  shadow-lg rounded-lg hover:scale-105 duration-200">
           <div className="font-semibold flex gap-4 items-center">
             <figure className="w-16 h-16 bg-white rounded-full overflow-hidden">
               <img
@@ -26,5 +28,11 @@ function Testimonials({limitedNumber}) {
     </section>
   );
 }
+
+
+Testimonials.propTypes  = {
+      limitedNumber: PropTypes.number.isRequired,  
+
+};
 
 export default Testimonials;

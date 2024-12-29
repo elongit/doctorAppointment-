@@ -7,16 +7,23 @@ const Login = () => {
     useLoginFormLogic();
 
   return (
-    <fieldset className="md:w-2/3 lg:w-2/4 m-auto mt-10 p-4 md:p-5 md:shadow-lg bg-white">
+    <section className="my-24">
+      <fieldset className="md:w-2/3 lg:w-2/4 m-auto  p-4 md:p-5 md:shadow-lg bg-white">
       <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">
         Patient log in{" "}
       </legend>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-        {msg && (
+        {msg  && (
           <div className="text-center text-white font-bold bg-red-300 rounded p-3">
             <p>{msg}</p>
           </div>
         )}
+
+           {err.invalidCredentials && (
+              <div className="text-center text-white font-bold bg-red-300 rounded p-3">
+                <p>{err.invalidCredentials}</p>
+              </div>
+            )}
 
         {/* Username */}
         <Input
@@ -66,6 +73,7 @@ const Login = () => {
         </div>
       </form>
     </fieldset>
+    </section>
   );
 };
 

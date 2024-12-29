@@ -5,6 +5,7 @@ import useSignUpFormLogic from "./signUpLogic";
 const SignUp = () => {
   const { formData, err, handleSubmit, handleChange } = useSignUpFormLogic()
   return (
+    <section className="my-24">
     <fieldset className="md:w-2/3 lg:w-2/4 m-auto p-4 mt-10   md:p-5 md:shadow-lg bg-white">
       <legend className="text-xl md:text-2xl font-bold text-primary-color drop-shadow">
         Create a new account
@@ -84,6 +85,7 @@ const SignUp = () => {
         </div>
       </form>
     </fieldset>
+    </section>
   );
 };
 export default SignUp;

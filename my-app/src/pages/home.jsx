@@ -18,8 +18,9 @@ const Home = () => {
   return (
     <>
    
-      {/* hero section */}
-      <section className="p-5">
+    <main className="grid grid-cols-1 gap-5">
+        {/* hero section */}
+        <section className="p-5">
         <div className="flex flex-col-reverse lg:grid grid-cols-1 pb-2 lg:p-0 lg:grid-cols-2 md:place-content-start lg:place-items-center   overflow-hidden gap-10 ">
          
           <div className="">
@@ -32,7 +33,7 @@ const Home = () => {
               Find availability of all doctor and book an appointment. with one
               click{" "}
             </p>
-               <Btn type='button' label="Explore now!" path="/doctorslist" />
+               <Btn type='button' label="Explore now!" path="/doctors" />
             
           </div>
           <figure className="overflow-hidden cursor-zoom-in">
@@ -64,7 +65,7 @@ const Home = () => {
             teleconsultations for quick access to care.
           </p>
           
-          <Btn type="button" label="Book an appointment now!" path="/doctorsList" />
+          <Btn type="button" label="Book an appointment now!" path="/doctors" />
         </div>
         <figure className="w-72 lg:w-96 order-first lg:order-last bg-white">
           <img src={serviceImage} alt="Doctor service image" className="w-full" />
@@ -81,6 +82,7 @@ const Home = () => {
         <Btn type="button" label={ <FontAwesomeIcon icon={faArrowRight} />} path="/TestimonialPage  " />
         </div>
       </section>
+    </main>
     </>
   );
 };

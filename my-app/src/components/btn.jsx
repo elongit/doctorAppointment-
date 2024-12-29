@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom"
+import PropTypes from "prop-types";
+
 const Btn = ({label , path , type})=>{
 
     return(
@@ -10,4 +12,11 @@ const Btn = ({label , path , type})=>{
     )
 }
 
+
+Btn.propTypes = {
+    label : PropTypes.node.isRequired, // node here validate anything including react elemnt
+    path : PropTypes.string.isRequired,
+    type : PropTypes.string.isRequired
+
+} 
 export default Btn
