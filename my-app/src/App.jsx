@@ -17,6 +17,7 @@ import NotFound from "./pages/404";
 
 import Footer from "./components/footer";
 import DoctorProfile from "./pages/doctors/doctorProfile";
+import TimeSlots from "./testing";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ const AppContent = () => {
   const { pathname } = useLocation();
   const routes = [
     { path: '/', component: <Home /> },
+    {path:'/timeslote', component : <TimeSlots/>},
     { path: '/login', component: <Login /> },
     { path: '/contact', component: <Contact /> },
     { path: '/signUp', component: <SignUp /> },
