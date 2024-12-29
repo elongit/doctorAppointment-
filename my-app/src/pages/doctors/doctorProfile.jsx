@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,28 +59,52 @@ const DoctorProfile = () => {
     '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM'
   ];
 
+  const [minDate, setMinDate] = useState("");
+  const [maxDate, setMaxDate] = useState("");
+
+   useEffect(() => {
+      // Get the current date
+      const today = new Date();
+  
+      // Create a new date object for 7 days from now
+      const min = new Date(today);
+      min.setDate(today.getDate() + 1); // Set minimum date to tomorrow
+      const max = new Date(today);
+      max.setDate(today.getDate() + 7); // Set maximum date to 7 days from today
+  
+      // Format the dates in YYYY-MM-DD format
+      setMinDate(min.toISOString().split("T")[0]);
+      setMaxDate(max.toISOString().split("T")[0]);
+    }, []);
+  
+  
+
   return (
     <main className="p-2 md:p-5 mt-20">
          <div className="mb-5">
               <Btn type="button" label={ <FontAwesomeIcon icon={faArrowLeft} />} path="/doctors" />
           </div>
       {/* Appointment Form Section */}
-      <section className="mt-5 bg-white p-6 rounded ">
-        <form onSubmit={handleSubmit} className="md:w-2/3 m-auto">
+      <fieldset className="md:w-2/3 m-auto mt-5 bg-white p-6 rounded ">
+      <legend className='text-lg text-gray-600 font-serif'>Book appointment with dr</legend>
+        <form onSubmit={handleSubmit} className=" m-auto">
 
           {/* Step 1: Choose Date */}
           {currentStep === 1 && (
-            <div className="mb-4 shadow p-5 rounded">
-              <Input
-                label="Choose a date"
+            <div className="mb-4 shadow p-5 rounded flex flex-col gap-2">
+                  <label htmlFor="datePicker">
+                Select a date between {minDate} to {maxDate}
+              </label>
+              <input
                 type="date"
-                id="date"
-                name="date"
-                value={appointment.date}
-                onChange={handleChange}
-                autocomplete="date"
+                id="datePicker"
+                name="datePicker"
+                className="p-3 bg-slate-100 w-full  focuse:ring-2 focuse:ring-blue-500 outline-non"
+                min={minDate}
+                max={maxDate}
                 required
               />
+            
 
               <label className="block text-lg font-medium text-gray-700 mb-2">Choose Time</label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center cursor-pointer">
@@ -257,7 +281,7 @@ const DoctorProfile = () => {
             </section>
           )}
         </form>
-      </section>
+      </fieldset>
     </main>
   );
 };
