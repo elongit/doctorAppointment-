@@ -83,15 +83,15 @@ const DoctorProfile = () => {
               />
 
               <label className="block text-lg font-medium text-gray-700 mb-2">Choose Time</label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center cursor-pointer">
                 {timeSlots.map((time) => (
                   <div
                     key={time}
                     onClick={() => handleTimeSelection(time)}
-                    className={`cursor-pointer p-4 text-center rounded-md border ${
+                    className={`p-2 rounded hover:scale-95 transition-all ${
                       selectedTime === time
-                        ? 'bg-sky-600 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-sky-200'
+                        ? 'bg-blue-500 text-white font-semibold'
+                        : ' ring-2 ring-blue-500 ' 
                     }`}
                   >
                     {time}
