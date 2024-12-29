@@ -10,10 +10,13 @@ import ForgetPassword from "./pages/auth/forgetPass";
 import EmailCode from "./pages/auth/emailCode";
 import ResetPassword from "./pages/auth/resetPass";
 import Contact from "./pages/contact/contact";
-import Footer from "./components/footer";
-import DoctorList from "./pages/doctorsList";
+
+import DoctorList from "./pages/doctors/doctorsList";
 import NotFound from "./pages/404";
-import UserHeader from "./pages/userProfile/userheader";
+
+
+import Footer from "./components/footer";
+import DoctorProfile from "./pages/doctors/doctorProfile";
 
 function App() {
   return (
@@ -30,36 +33,43 @@ const AppContent = () => {
     { path: '/login', component: <Login /> },
     { path: '/contact', component: <Contact /> },
     { path: '/signUp', component: <SignUp /> },
-    { path: '/doctorsList', component: <DoctorList /> },
+    { path: '/doctors', component: <DoctorList /> },
     { path: '/*', component: <NotFound /> },
     { path: '/forgetPass', component: <ForgetPassword /> },
     { path: '/emailCode', component: <EmailCode /> },
     { path: '/resetPass', component: <ResetPassword /> },
-    { path: '/user', component: <UserHeader /> },
     { path: '/TestimonialPage', component: <TestimonialPage /> },
+
+    { path: '/booking', component: <DoctorProfile /> },
+
   ];
 
 
-  let header;
-  if (pathname === '/doctorsList' || pathname === '/contact') {
-    header = <UserHeader />;
-  } else if (pathname === '/TestimonialPage') {
-    header = null;
+  let header , footer ;
+
+  if (pathname === '/TestimonialPage' || pathname === '/booking' || pathname === '/doctorprofile' ) {
+    header =  null;
+    footer = null
+
+    
   } else {
     header = <Header />;
+    footer = <Footer/>;
   }
 
   return (
     <>
       {header}
-      <main className="lg:pt-0 pb-20">
-        <Routes>
-          {routes.map((route) => (
-            <Route key={route.path} path={route.path} element={route.component} />
-          ))}
-        </Routes>
-      </main>
-      <Footer />
+     
+        <main className="lg:pt-0 pb-20">
+          <Routes>
+            {routes.map((route) => (
+              <Route key={route.path} path={route.path} element={route.component} />
+            ))}
+          </Routes>
+        </main>
+      
+      {footer}
     </>
   );
 };
