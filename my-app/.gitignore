@@ -26,3 +26,5 @@ dist-ssr
 /css
 *style.css
 
+src/testing
+
