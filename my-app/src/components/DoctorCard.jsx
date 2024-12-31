@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-export default function DoctorCard({ name, specialty, imageUrl }) {
+export default function DoctorCard({ name, specialty, imageUrl , id}) {
 
   return (
     <article className="text-[17px] h-fit hover:shadow-lg transition-all p-2 cursor-pointer">
@@ -26,7 +26,7 @@ export default function DoctorCard({ name, specialty, imageUrl }) {
           className="bg-primary-color hover:bg-secondary-color text-white font-bold  py-2 rounded-md"
         >
         
-        <NavLink to='/booking'>
+        <NavLink to={`/booking/${id}`}>
         Book an appointment
         </NavLink>
         
@@ -37,6 +37,7 @@ export default function DoctorCard({ name, specialty, imageUrl }) {
 }
 
 DoctorCard.propTypes = {
+  id:PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   specialty: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
