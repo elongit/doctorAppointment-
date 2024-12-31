@@ -34,12 +34,14 @@ const DoctorList = () => {
     setSpeciality(e.target.value.toLowerCase());
   };
 
+  
+
   return (
     <div className="flex flex-col-reverse md:flex-row-reverse">
       {/* Main doctor cards section */}
       <section className="p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 md:gap-5 w-full lg:w-2/3">
-        {filteredItems.map((doctor, index) => (
-          <DoctorCard key={index} name={doctor.name} specialty={doctor.specialty} imageUrl={doctor.imageUrl} />
+        {filteredItems.map((doctor) => (
+          <DoctorCard key={doctor.id} name={doctor.name} specialty={doctor.specialty} imageUrl={doctor.imageUrl} id={doctor.id} />
         ))}
         {filteredItems.length === 0 && query === "" && (
           <h3 className="text-center text-red-500 font-bold">Please apply filters to search doctors...</h3>
