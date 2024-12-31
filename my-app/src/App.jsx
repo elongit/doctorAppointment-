@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 // Components
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "./components/inc/header";
 import Home from "./pages/home";
 import Login from "./pages/auth/Login/loginForm";
 import SignUp from "./pages/auth/signUp/signUpForm";
@@ -14,6 +13,7 @@ import TestimonialPage from "./pages/testimonialsPage";
 import DoctorList from "./pages/doctors/doctorsList";
 import DoctorProfile from "./pages/doctors/doctorProfile";
 import NotFound from "./pages/404";
+import Footer from "./components/inc/footer";
 
 function App() {
   return (
