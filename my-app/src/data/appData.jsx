@@ -39,6 +39,7 @@ const Cities = [
   
   const DoctorsData = [
     {
+      id:1,
       name: "Nadia Talbi",
       specialty: "Cardiology",
       imageUrl:
@@ -47,6 +48,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:2,
       name: "Fatima Zahra",
       specialty: "Dermatology",
       imageUrl:
@@ -55,6 +57,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:3,
       name: "Ahmed Benali",
       specialty: "Neurology",
       imageUrl:
@@ -63,6 +66,7 @@ const Cities = [
       gender: "male",
     },
     {
+      id:4,
       name: "Meriem El Amrani",
       specialty: "Pediatrics",
       imageUrl: "https://www.findablackdoctor.com/wp-content/themes/fabd/src/assets/hp-hero.jpg",
@@ -70,6 +74,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:5,
       name: "Mohamed El Fassi",
       specialty: "Orthopedics",
       imageUrl:
@@ -78,6 +83,7 @@ const Cities = [
       gender: "male",
     },
     {
+      id:6,
       name: "Amina Rami",
       specialty: "Psychiatry",
       imageUrl:
@@ -86,6 +92,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:7,
       name: "Youssef Azzouz",
       specialty: "General Practice",
       imageUrl:
@@ -94,6 +101,7 @@ const Cities = [
       gender: "male",
     },
     {
+      id:8,
       name: "Samira Bensalem",
       specialty: "Gynecology",
       imageUrl:
@@ -102,6 +110,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:9,
       name: "Tariq El Hadi",
       specialty: "Anesthesiology",
       imageUrl:
@@ -110,6 +119,7 @@ const Cities = [
       gender: "male",
     },
     {
+      id:10,
       name: "Zahra El Khouja",
       specialty: "Ophthalmology",
       imageUrl:
@@ -118,6 +128,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:11,
       name: "Hassan Dabbagh",
       specialty: "Urology",
       imageUrl:
@@ -127,6 +138,7 @@ const Cities = [
     },
     // Doctors with the same specialty:
     {
+      id:12,
       name: "Imane Bakkali",
       specialty: "Cardiology",
       imageUrl:
@@ -135,6 +147,7 @@ const Cities = [
       gender: "female",
     },
     {
+      id:13,
       name: "Ali Amrani",
       specialty: "Dermatology",
       imageUrl:
