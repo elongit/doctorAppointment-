@@ -13,7 +13,6 @@ import Contact from "./pages/contact/contact";
 import TestimonialPage from "./pages/testimonialsPage";
 import DoctorList from "./pages/doctors/doctorsList";
 import DoctorProfile from "./pages/doctors/doctorProfile";
-import TimeSlots from "./testing";
 import NotFound from "./pages/404";
 
 function App() {
@@ -42,7 +41,6 @@ const AppContent = () => {
         <Routes>
           {/* Define all your routes here */}
           <Route path="/" element={<Home />} />
-          <Route path="/timeslote" element={<TimeSlots />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signUp" element={<SignUp />} />
