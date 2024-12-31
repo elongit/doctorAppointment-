@@ -1,25 +1,28 @@
-import { useState , useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-
+import { useState, useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom";
+import { DoctorsData } from "../../data/appData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-import Btn from '../../components/btn';
+import Btn from "../../components/btn";
 
 const DoctorProfile = () => {
+  const { id } = useParams();
+  const doctor = DoctorsData.find((d) => d.id === parseInt(id));
+
   // State for appointment details and step tracking
   const [appointment, setAppointment] = useState({
-    date: '',
-    time: '',
-    reason: '',
+    date: "",
+    time: "",
+    reason: "",
   });
   const [payment, setPayment] = useState({
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
-    cardHolderName: '',
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    cardHolderName: "",
   });
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedTime, setSelectedTime] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleChange = (e) => {
@@ -48,51 +51,67 @@ const DoctorProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Appointment Details:', appointment);
-    console.log('Payment Information:', payment);
+    console.log("Appointment Details:", appointment);
+    console.log("Payment Information:", payment);
     // Add logic to submit to API or back-end
   };
 
   // Predefined time slots
   const timeSlots = [
-    '08:00 AM', '09:00 AM', '10:00 AM', '11:00 AM',
-    '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM'
+    "08:00 AM",
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "01:00 PM",
+    "02:00 PM",
+    "03:00 PM",
   ];
 
   const [minDate, setMinDate] = useState("");
   const [maxDate, setMaxDate] = useState("");
 
-   useEffect(() => {
-      // Get the current date
-      const today = new Date();
-  
-      // Create a new date object for 7 days from now
-      const min = new Date(today);
-      min.setDate(today.getDate() + 1); // Set minimum date to tomorrow
-      const max = new Date(today);
-      max.setDate(today.getDate() + 7); // Set maximum date to 7 days from today
-  
-      // Format the dates in YYYY-MM-DD format
-      setMinDate(min.toISOString().split("T")[0]);
-      setMaxDate(max.toISOString().split("T")[0]);
-    }, []);
-  
-  
+  useEffect(() => {
+    // Get the current date
+    const today = new Date();
+
+    // Create a new date object for 7 days from now
+    const min = new Date(today);
+    min.setDate(today.getDate() + 1); // Set minimum date to tomorrow
+    const max = new Date(today);
+    max.setDate(today.getDate() + 7); // Set maximum date to 7 days from today
+
+    // Format the dates in YYYY-MM-DD format
+    setMinDate(min.toISOString().split("T")[0]);
+    setMaxDate(max.toISOString().split("T")[0]);
+  }, []);
 
   return (
-    <main className="p-2 md:p-5 mt-20">
-         <div className="mb-5">
-              <Btn type="button" label={ <FontAwesomeIcon icon={faArrowLeft} />} path="/doctors" />
-          </div>
+    <main className="p-2 md:p-5 mt-5">
+      <div className="mb-5">
+        <Btn
+          type="button"
+          label={<FontAwesomeIcon icon={faArrowLeft} />}
+          path="/doctors"
+        />
+      </div>
       {/* Appointment Form Section */}
       <fieldset className="md:w-2/3 m-auto mt-5 bg-white p-6 rounded ">
-      <legend className='text-lg text-gray-600 font-serif'>Book appointment with dr</legend>
+        <legend className="text-lg text-gray-600 font-serif flex gap-2">
+          Book appointment with dr{" "}
+          <span className="drop-shadow text-primary-color">
+            {" "}
+            {doctor.name}{" "}
+          </span>
+          <span className="text-white text-sm bg-gradient-to-r from-blue-600 via-primary-color to-blue-400 rounded-full p-1 px-2 w-fit">
+            {doctor.specialty}
+          </span>
+        </legend>
         <form onSubmit={handleSubmit} className=" m-auto">
-
           {/* Step 1: Choose Date */}
           {currentStep === 1 && (
             <div className="mb-4 shadow p-5 rounded flex flex-col gap-2">
-                  <label htmlFor="datePicker">
+              <label htmlFor="datePicker">
                 Select a date between {minDate} to {maxDate}
               </label>
               <input
@@ -104,9 +123,10 @@ const DoctorProfile = () => {
                 max={maxDate}
                 required
               />
-            
 
-              <label className="block text-lg font-medium text-gray-700 mb-2">Choose Time</label>
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Choose Time
+              </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center cursor-pointer">
                 {timeSlots.map((time) => (
                   <div
@@ -114,8 +134,8 @@ const DoctorProfile = () => {
                     onClick={() => handleTimeSelection(time)}
                     className={`p-2 rounded hover:scale-95 transition-all ${
                       selectedTime === time
-                        ? 'bg-blue-500 text-white font-semibold'
-                        : ' ring-2 ring-blue-500 ' 
+                        ? "bg-blue-500 text-white font-semibold"
+                        : " ring-2 ring-blue-500 "
                     }`}
                   >
                     {time}
@@ -136,10 +156,15 @@ const DoctorProfile = () => {
           {/* Step 2: Checkout - Payment Form */}
           {currentStep === 2 && (
             <div className="mb-4 shadow p-5 rounded">
-              <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
+              <h2 className="text-xl font-semibold mb-4">
+                Payment Information
+              </h2>
 
               {/* Card Number */}
-              <label htmlFor="cardNumber" className="block text-lg font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="cardNumber"
+                className="block text-lg font-medium text-gray-700 mb-2"
+              >
                 Card Number
               </label>
               <input
@@ -156,7 +181,10 @@ const DoctorProfile = () => {
               {/* Expiry Date */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="expiryDate" className="block text-lg font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="expiryDate"
+                    className="block text-lg font-medium text-gray-700 mb-2"
+                  >
                     Expiry Date
                   </label>
                   <input
@@ -172,7 +200,10 @@ const DoctorProfile = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="cvv" className="block text-lg font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="cvv"
+                    className="block text-lg font-medium text-gray-700 mb-2"
+                  >
                     CVV
                   </label>
                   <input
@@ -189,7 +220,10 @@ const DoctorProfile = () => {
               </div>
 
               {/* Cardholder Name */}
-              <label htmlFor="cardHolderName" className="block text-lg font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="cardHolderName"
+                className="block text-lg font-medium text-gray-700 mb-2"
+              >
                 Cardholder Name
               </label>
               <input
@@ -207,7 +241,12 @@ const DoctorProfile = () => {
                 type="button"
                 className="w-full bg-sky-600 text-white p-3 rounded-md font-semibold hover:bg-sky-700 transition mt-4"
                 onClick={() => setCurrentStep(3)}
-                disabled={!payment.cardNumber || !payment.expiryDate || !payment.cvv || !payment.cardHolderName}
+                disabled={
+                  !payment.cardNumber ||
+                  !payment.expiryDate ||
+                  !payment.cvv ||
+                  !payment.cardHolderName
+                }
               >
                 Next
               </button>
@@ -217,7 +256,10 @@ const DoctorProfile = () => {
           {/* Step 3: Reason for Visit */}
           {currentStep === 3 && (
             <div className="mb-4 shadow p-5 rounded">
-              <label htmlFor="reason" className="block text-lg font-medium text-gray-700">
+              <label
+                htmlFor="reason"
+                className="block text-lg font-medium text-gray-700"
+              >
                 Reason for Visit
               </label>
               <textarea
@@ -249,23 +291,26 @@ const DoctorProfile = () => {
               <div className="bg-green-400 p-5 text-lg text-center text-white font-bold">
                 <h1>Your appointment has been successfully booked.</h1>
                 <p className="text-sm mt-3">
-                  If you have any questions or need to make changes to your appointment, feel free to{' '}
+                  If you have any questions or need to make changes to your
+                  appointment, feel free to{" "}
                   <NavLink className="underline cursor-pointer" to="/contact">
                     contact us
-                  </NavLink>.
+                  </NavLink>
+                  .
                 </p>
               </div>
 
               {/* Additional Info and Reason */}
               <div className="mt-5">
-                <label htmlFor="reason" className="block text-lg font-medium text-gray-700">
+                <label
+                  htmlFor="reason"
+                  className="block text-lg font-medium text-gray-700"
+                >
                   Do not hesitate to contact your doctor
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                 
-                 
                   rows="4"
                   placeholder="Your message"
                   required
